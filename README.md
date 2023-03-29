@@ -1,14 +1,30 @@
 ![image](https://img.shields.io/badge/Test%20Count-110-blue)
 # 42sh tester
-
 With this tester you can test your own shell.
 Based on TCSH.
 
-## Usage
+## Requirements
+- You must `make` your shell.
+- Your binary must have the name "mysh".
 
-```bash
-$> ./my_tester.sh [TEST_ID]
-```
+## Usage
+1. Go into your shell folder and clone this repo.
+2. Run `cd 42sh-tester && ./my_tester`
+
+## Features tested
+### Commands builtin
+- `cd`
+- `exit`
+- `env`
+- `setenv`
+- `unsetenv`
+- `echo`
+
+### Separators
+- `|`
+- `>`
+- `>>`
+- `<`
 
 ## Example
 ![image](https://user-images.githubusercontent.com/114762819/228669523-c267f9db-482f-4a7e-bbda-314240a4a23b.png)
