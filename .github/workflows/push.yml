@@ -3,6 +3,7 @@ on:
     paths:
       - 'my_tester.sh'
       - '*.yml'
+  workflow_dispatch:
 
 env:
   TESTS_COUNT: 0
