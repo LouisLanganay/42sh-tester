@@ -4,12 +4,15 @@ With this tester you can test your own shell.
 Based on TCSH.
 
 ## Requirements
-- You must `make` your shell.
+- You must `make` your project.
 - Your binary must have the name "mysh".
 
 ## Usage
-1. Go into your shell folder and clone this repo.
-2. Run `cd 42sh-tester && ./my_tester`
+1. Go to the last release and download the `my_tester.sh` file.
+2. Put it in the root of your project.
+3. Run it with `./my_tester.sh`.
+
+:information_source: Don't forget to `chmod 777 my_tester.sh` before running it.
 
 ## Features tested
 ### Commands builtin
