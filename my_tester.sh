@@ -55,7 +55,7 @@ execute ()
     rm -rf /tmp/mysh
     mkdir /tmp/mysh
 
-    MYSH=$(echo "$1"| ./mysh 2>&1)
+    MYSH=$(echo "$1"| ../mysh 2>&1)
     RET_MYSH=$(echo $?)
 
     rm -rf /tmp/mysh

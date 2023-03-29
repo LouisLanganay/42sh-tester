@@ -1,4 +1,4 @@
-![image](https://img.shields.io/badge/Test%20Count-0-blue)
+![image](https://img.shields.io/badge/Test%20Count-110-blue)
 # 42sh tester
 
 With this tester you can test your own shell.
