@@ -34,6 +34,9 @@ Based on TCSH.
 ![image](https://user-images.githubusercontent.com/114762819/228669619-93e74d4d-d492-4add-9a64-5656182e360f.png)
 ![image](https://user-images.githubusercontent.com/114762819/228669668-ac1f446c-84f2-416b-bf55-4f44614fe42d.png)
 
+## Credits
+https://github.com/M4gie/epi-minishell2-tester/tree/1d1279afc569d147631ca79b41be9e50551fe4ba
+
 
 ![Logo](https://newsroom.ionis-group.com/wp-content/uploads/2021/10/EPITECH-TECHNOLOGY-QUADRI-2021.png)
 
