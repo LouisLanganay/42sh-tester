@@ -290,6 +290,7 @@ then
     printf "\n\033[1;33m----- MINISHELL ECHO TESTS -----\033[0m\n\n"
 fi
 
+# Simple
 execute "Echo" "0"
 execute "ECHO" "0"
 execute "echo" "0"
@@ -299,12 +300,21 @@ execute "echo hello world" "0"
 execute "echo hello       world" "0"
 execute "echo     hello world" "0"
 execute "echo hello world    " "0"
+
+# Quotes
 execute "echo a '' b '' c '' d" "0"
-execute "echo -nhello world" "0"
-execute "echo a	hello -nhello world" "0"
 execute "echo \"hello world\"" "0"
 execute "echo 'hello world'" "0"
 execute "echo 'hello world' 'hello world'" "0"
+
+# Specials
+execute "echo -nhello world" "0"
+execute "echo a	hello -nhello world" "0"
+
+# Variables
+execute "echo \$HOME" "0"
+execute "echo \$AAA" "0"
+execute "echo "\$HOME"" "0"
 
 ### VARIABLES ###
 if [ ! $TEST_ID ]
