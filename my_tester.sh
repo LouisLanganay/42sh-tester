@@ -310,7 +310,7 @@ execute "echo 'hello world' 'hello world'" "0"
 if [ ! $TEST_ID ]
 then
     printf "\n\033[1;33m----- MINISHELL VARIABLES TESTS -----\033[0m\n\n"
-fi"$
+fi
 
 execute "set test = build/ ; ls $test" "0"
 execute "ls $test" "0"
