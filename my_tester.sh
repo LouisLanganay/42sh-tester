@@ -14,11 +14,11 @@ compare ()
         printf "%d -\t\033[1;32m[SUCCESS]\033[0m (%s)\n" $TOTAL_TESTS "$5"
         if [ $TEST_ID ]
         then
-            printf "\t\033[1;29m./mysh output: \n\033[0m"
+            printf "\t\033[1;29m./42sh output: \n\033[0m"
             printf "\t\033[1;29m-----------------------\n\033[0m"
             printf "\t\033[1;29m%s\n\033[0m" "$1"
             printf "\t\033[1;29m-----------------------\n\033[0m"
-            printf "\t\033[1;29m./mysh return value %s\n\n\033[0m" "$3"
+            printf "\t\033[1;29m./42sh return value %s\n\n\033[0m" "$3"
             printf "\t\033[1;29mTcsh output:\n\033[0m"
             printf "\t\033[1;29m-----------------------\n\033[0m"
             printf "\t\033[1;29m%s\n\033[0m" "$2"
@@ -28,11 +28,11 @@ compare ()
         SUCCESS_TESTS=$((SUCCESS_TESTS+1))
     else
         printf "%d -\t\033[1;31m[FAIL]\033[0m  \033[4;31m(%s)\n\033[0m" $TOTAL_TESTS "$5"
-        printf "\t\033[1;29m./mysh output: \n\033[0m"
+        printf "\t\033[1;29m./42sh output: \n\033[0m"
         printf "\t\033[1;29m-----------------------\n\033[0m"
         printf "\t\033[1;29m%s\n\033[0m" "$1"
         printf "\t\033[1;29m-----------------------\n\033[0m"
-        printf "\t\033[1;29m./mysh return value %s\n\n\033[0m" "$3"
+        printf "\t\033[1;29m./42sh return value %s\n\n\033[0m" "$3"
         printf "\t\033[1;29mTcsh output:\n\033[0m"
         printf "\t\033[1;29m-----------------------\n\033[0m"
         printf "\t\033[1;29m%s\n\033[0m" "$2"
@@ -52,14 +52,14 @@ execute ()
             return
         fi
     fi
-    rm -rf /tmp/mysh
-    mkdir /tmp/mysh
+    rm -rf /tmp/42sh
+    mkdir /tmp/42sh
 
-    MYSH=$(echo "$1"| ./mysh 2>&1)
+    MYSH=$(echo "$1"| ./42sh 2>&1)
     RET_MYSH=$(echo $?)
 
-    rm -rf /tmp/mysh
-    mkdir /tmp/mysh
+    rm -rf /tmp/42sh
+    mkdir /tmp/42sh
 
     if [ "$2" = "1" ]; then
         TCSH=$(echo "$1" | env -i tcsh 2>&1)
@@ -76,8 +76,8 @@ printf "\033[1;36m----- MINISHELL FUNCTIONAL TESTS -----\033[0m\n\n"
 
 ## CHECK IF BINARY EXISTS ##
 
-if [ ! -f mysh ]; then
-    printf "\033[1;31m[ERROR]\033[0m mysh binary not found\n"
+if [ ! -f 42sh ]; then
+    printf "\033[1;31m[ERROR]\033[0m 42sh binary not found\n"
     printf "\033[1;33mPlease compile your project before running this script with make\033[0m\n\n"
     printf "\033[1;36m----- MINISHELL FUNCTIONAL TESTS -----\033[0m\n\n"
     exit 1
@@ -104,7 +104,7 @@ execute "cat toto" "0"
 execute "exitt" "0"
 execute ".gitignore" "0"
 execute "rjzjrjz ppekn" "0"
-execute "touch /tmp/mysh/test.sh ; /tmp/mysh/test.sh" "1"
+execute "touch /tmp/42sh/test.sh ; /tmp/42sh/test.sh" "1"
 
 ### SPACES AND TABS TESTS ###
 
@@ -196,7 +196,7 @@ then
     printf "\n\033[1;33m----- MINISHELL PERMISSIONS AND EXECUTION TESTS -----\033[0m\n\n"
 fi
 
-execute "./mysh" "0"
+execute "./42sh" "0"
 execute "../bin/ls" "0"
 execute "./bin/ls" "0"
 execute "/bin/ls" "0"
@@ -245,24 +245,24 @@ fi
 execute "cat < >" "1"
 execute "cat <" "1"
 execute "cat >" "1"
-execute "cat < > /tmp/mysh/hoho" "1"
-execute "cat < /tmp/mysh/yoyo" "1"
-execute "cat > /tmp/mysh/momo" "1"
-execute "cat > /tmp/mysh/yuyu > /tmp/mysh/tata < /tmp/mysh/yuyu" "1"
-execute "cat > /tmp/mysh/yuyu > /tmp/mysh/tata < /tmp/mysh/yuyu ; cat < /tmp/mysh/yuyu" "1"
+execute "cat < > /tmp/42sh/hoho" "1"
+execute "cat < /tmp/42sh/yoyo" "1"
+execute "cat > /tmp/42sh/momo" "1"
+execute "cat > /tmp/42sh/yuyu > /tmp/42sh/tata < /tmp/42sh/yuyu" "1"
+execute "cat > /tmp/42sh/yuyu > /tmp/42sh/tata < /tmp/42sh/yuyu ; cat < /tmp/42sh/yuyu" "1"
 
 
 ## OUTPUT
 # Simple
-execute "ls -l > /tmp/mysh/toto ; cat /tmp/mysh/toto" "0"
+execute "ls -l > /tmp/42sh/toto ; cat /tmp/42sh/toto" "0"
 
 # Double
-execute "ls -l > /tmp/mysh/titi ; ls >> /tmp/mysh/titi ; cat /tmp/mysh/titi ; rm /tmp/mysh/titi" "0"
-execute "ls -l >> /tmp/mysh/kuku ; cat /tmp/mysh/kuku ; rm /tmp/mysh/kuku" "0"
+execute "ls -l > /tmp/42sh/titi ; ls >> /tmp/42sh/titi ; cat /tmp/42sh/titi ; rm /tmp/42sh/titi" "0"
+execute "ls -l >> /tmp/42sh/kuku ; cat /tmp/42sh/kuku ; rm /tmp/42sh/kuku" "0"
 
 ## INPUT
 # Simple
-execute "ls -l > /tmp/mysh/mama ; sort -r < /tmp/mysh/mama" "0"
+execute "ls -l > /tmp/42sh/mama ; sort -r < /tmp/42sh/mama" "0"
 
 ### REDIRECTION && PIPE TESTS ###
 
@@ -273,16 +273,16 @@ fi
 
 ## OUTPUT
 # Simple
-execute "ls -l > /tmp/mysh/papa ; cat /tmp/mysh/papa | grep lib" "0"
-execute "ls -l > /tmp/mysh/lala ; cat /tmp/mysh/lala | grep lib | cat -e" "0"
+execute "ls -l > /tmp/42sh/papa ; cat /tmp/42sh/papa | grep lib" "0"
+execute "ls -l > /tmp/42sh/lala ; cat /tmp/42sh/lala | grep lib | cat -e" "0"
 
 # Double
-execute "ls -l > /tmp/mysh/dada ; ls >> /tmp/mysh/dada ; cat /tmp/mysh/dada | grep lib ; rm /tmp/mysh/dada" "0"
+execute "ls -l > /tmp/42sh/dada ; ls >> /tmp/42sh/dada ; cat /tmp/42sh/dada | grep lib ; rm /tmp/42sh/dada" "0"
 
 ## INPUT
 # Simple
-execute "ls -l > /tmp/mysh/fafa ; sort -r < /tmp/mysh/fafa | grep lib" "0"
-execute "ls -l > /tmp/mysh/gaga ; sort -r < /tmp/mysh/gaga | grep lib | cat -e" "0"
+execute "ls -l > /tmp/42sh/fafa ; sort -r < /tmp/42sh/fafa | grep lib" "0"
+execute "ls -l > /tmp/42sh/gaga ; sort -r < /tmp/42sh/gaga | grep lib | cat -e" "0"
 
 ### ECHO TESTS ###
 if [ ! $TEST_ID ]
@@ -306,6 +306,18 @@ execute "echo \"hello world\"" "0"
 execute "echo 'hello world'" "0"
 execute "echo 'hello world' 'hello world'" "0"
 
+### VARIABLES ###
+if [ ! $TEST_ID ]
+then
+    printf "\n\033[1;33m----- MINISHELL VARIABLES TESTS -----\033[0m\n\n"
+fi"$
+
+execute "set test = build/ ; ls $test" "0"
+execute "ls $test" "0"
+execute "set ²test = toto"
+execute "set test=build/ ; ls $test" "0"
+execute "set test=build/" "0"
+execute "set test = build tata ; ls $test" "0"
 
 ### OTHER TESTS ###
 
@@ -323,7 +335,7 @@ execute "sleep 0.1" "0"
 
 ### TESTS TA ###
 
-execute "cat -e main_map.json | grep o" "0"
+execute "cat -e tests/bigfile.json | grep o" "0"
 
 
 ### RESULT TESTS ###
