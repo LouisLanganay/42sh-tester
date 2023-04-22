@@ -329,6 +329,36 @@ execute "set test=build/ ; ls $test" "0"
 execute "set test=build/" "0"
 execute "set test = build tata ; ls $test" "0"
 
+### HISTORY ###
+if [ ! $TEST_ID ]
+then
+    printf "\n\033[1;33m----- MINISHELL HISTORY TESTS -----\033[0m\n\n"
+fi
+
+execute "history" "0"
+execute "history -c" "0"
+execute "history -c ; history" "0"
+execute "history ; ls" "0"
+execute "ls ; !ls" "0"
+execute "ls src ; !l | cat -e" "0"
+execute "ls * 10 ; !5" "0"
+execute "!5454" "1"
+execute "!10000000 | cat -e ; history" "0"
+
+execute "where ls" "0"
+execute "where ls toto" "0"
+execute "where ./toto" "0"
+execute "where 5" "0"
+execute "where cd ls" "0"
+execute "where" "0"
+execute "which ls" "0"
+execute "which ls toto" "0"
+execute "which ./toto" "0"
+execute "which 5" "0"
+execute "which cd ls" "0"
+execute "which" "0"
+
+
 ### OTHER TESTS ###
 
 if [ ! $TEST_ID ]
