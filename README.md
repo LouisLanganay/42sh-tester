@@ -17,11 +17,11 @@ Based on TCSH.
 
 **OR**
 
-1. Go to the [last release](https://github.com/LouisLanganay/42sh-tester/releases/latest) and download the run_tests.sh file.
+1. Go to the [last release](https://github.com/LouisLanganay/42sh-tester/releases/latest) and download the `run_tests.sh` file.
 2. Put it in the root of your project.
-3. Run it with ./run_tests.sh.
+3. Run it with `./run_tests.sh`.
 
-:information_source: Don't forget to `chmod 777 run_tests.sh` before running it.
+> **Note** Don't forget to `chmod 777 run_tests.sh` before running it.
 
 ## Features tested
 ### Commands builtin
