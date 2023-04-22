@@ -21,7 +21,7 @@ Based on TCSH.
 2. Put it in the root of your project.
 3. Run it with ./run_tests.sh.
 
-:information_source: Don't forget to `chmod 777 my_tester.sh` before running it.
+:information_source: Don't forget to `chmod 777 run_tests.sh` before running it.
 
 ## Features tested
 ### Commands builtin
