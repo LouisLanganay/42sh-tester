@@ -1,4 +1,8 @@
-![image](https://img.shields.io/badge/Test%20Count-110-blue)
+<p align="center">
+    <img src="https://img.shields.io/badge/Test%20Count-110-blue"/>
+    <img src="https://img.shields.io/github/stars/LouisLanganay/42sh-tester.svg?style=social&label=Star&maxAge=2592000"/>
+</p>
+
 # 42sh tester
 With this tester you can test your own shell.
 Based on TCSH.
