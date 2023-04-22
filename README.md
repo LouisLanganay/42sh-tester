@@ -15,6 +15,12 @@ Based on TCSH.
 1. Clone this repo in your 42sh repository `git clone git@github.com:LouisLanganay/42sh-tester.git`
 2. Run it with `./42sh-tester/my_tester.sh`
 
+**OR**
+
+1. Go to the last release and download the run_tests.sh file.
+2. Put it in the root of your project.
+3. Run it with ./run_tests.sh.
+
 :information_source: Don't forget to `chmod 777 my_tester.sh` before running it.
 
 ## Features tested
