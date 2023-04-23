@@ -341,7 +341,7 @@ execute "history -c ; history" "0"
 execute "history ; ls" "0"
 execute "ls ; !ls" "0"
 execute "ls src ; !l | cat -e" "0"
-execute "ls * 10 ; !5" "0"
+execute "ls * 10 ; !100000000000000" "0"
 execute "!5454" "1"
 execute "!10000000 | cat -e ; history" "0"
 
