@@ -335,15 +335,24 @@ then
     printf "\n\033[1;33m----- MINISHELL HISTORY TESTS -----\033[0m\n\n"
 fi
 
-execute "history" "0"
+# Command
 execute "history -c" "0"
 execute "history -c ; history" "0"
-execute "history ; ls" "0"
+execute "history -c ; ls" "0"
+execute "history -c ; ls ; history" "0"
+
+# "!"
 execute "ls ; !ls" "0"
 execute "ls src ; !l | cat -e" "0"
 execute "ls * 10 ; !100000000000000" "0"
 execute "!5454" "1"
-execute "!10000000 | cat -e ; history" "0"
+execute "history -c ; !10000000 | cat -e ; history" "0"
+
+### WHERE / WHICH ###
+if [ ! $TEST_ID ]
+then
+    printf "\n\033[1;33m----- MINISHELL WHERE / WHICH TESTS -----\033[0m\n\n"
+fi
 
 execute "where ls" "0"
 execute "where ls toto" "0"
@@ -357,6 +366,31 @@ execute "which ./toto" "0"
 execute "which 5" "0"
 execute "which cd ls" "0"
 execute "which" "0"
+
+### OPERATORS ###
+if [ ! $TEST_ID ]
+then
+    printf "\n\033[1;33m----- MINISHELL OPERATORS TESTS -----\033[0m\n\n"
+fi
+
+# "&&"
+execute "ls && ls" "0"
+execute "ls && a && ls" "0"
+
+# "||"
+execute "ls || ls" "0"
+execute "a || a || ls || ls" "0"
+
+### Alias ###
+if [ ! $TEST_ID ]
+then
+    printf "\n\033[1;33m----- MINISHELL ALIAS TESTS -----\033[0m\n\n"
+fi
+
+execute "alias" "0"
+execute "alias popo" "0"
+execute "alias toto ls ; toto" "0"
+execute "alias ls toto ; ls" "0"
 
 
 ### OTHER TESTS ###
@@ -375,7 +409,7 @@ execute "sleep 0.1" "0"
 
 ### TESTS TA ###
 
-execute "cat -e tests/bigfile.json | grep o" "0"
+execute "cat -e 42sh-tester/tests/bigfile.json | grep o" "0"
 
 
 ### RESULT TESTS ###
