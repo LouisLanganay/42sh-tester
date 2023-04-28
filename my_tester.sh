@@ -322,12 +322,16 @@ then
     printf "\n\033[1;33m----- MINISHELL VARIABLES TESTS -----\033[0m\n\n"
 fi
 
-execute "set test = build/ ; ls $test" "0"
-execute "ls $test" "0"
-execute "set ²test = toto"
-execute "set test=build/ ; ls $test" "0"
+execute "\$PATH" "0"
+execute "\$HOME" "0"
+execute "\$SHTESTER" "0"
+
+execute "set test = build/ ; ls \$test" "0"
+execute "ls \$test" "0"
+execute "set test = toto"
+execute "set test=build/ ; ls \$test" "0"
 execute "set test=build/" "0"
-execute "set test = build tata ; ls $test" "0"
+execute "set test = build tata ; ls \$test" "0"
 
 ### HISTORY ###
 if [ ! $TEST_ID ]
@@ -400,6 +404,7 @@ then
     printf "\n\033[1;33m----- OTHER TESTS -----\033[0m\n\n"
 fi
 
+execute "\$?" "0"
 execute ";|" "1"
 execute ";>>|><" "1"
 execute "\0" "0"
