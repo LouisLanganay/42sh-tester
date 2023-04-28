@@ -396,6 +396,14 @@ execute "alias popo" "0"
 execute "alias toto ls ; toto" "0"
 execute "alias ls toto ; ls" "0"
 
+### BACKTICKS ###
+if [ ! $TEST_ID ]
+then
+    printf "\n\033[1;33m----- MINISHELL BACKTICKS TESTS -----\033[0m\n\n"
+fi
+
+execute "ls \`ls\`" "0"
+execute "echo \`echo hello\`" "0"
 
 ### OTHER TESTS ###
 

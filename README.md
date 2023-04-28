@@ -21,7 +21,7 @@ Based on TCSH.
 2. Put it in the root of your project.
 3. Run it with `./run_tests.sh`.
 
-> **Note** Don't forget to `chmod 777 run_tests.sh` before running it.
+> **Note** You can get informations about a specific test using `./run_tests.sh TEST_NBR`
 
 ## Features tested
 ### Commands builtin
@@ -31,12 +31,25 @@ Based on TCSH.
 - `setenv`
 - `unsetenv`
 - `echo`
+- `history`
+- `which`
+- `where`
+- `alias`
 
 ### Separators
 - `|`
 - `>`
 - `>>`
 - `<`
+
+### Operators
+- `&&`
+- `||`
+
+### Backticks
+- `\``
+
+> **Note** All return values are tested for each tests
 
 ## Example
 ![image](https://user-images.githubusercontent.com/114762819/228669523-c267f9db-482f-4a7e-bbda-314240a4a23b.png)
