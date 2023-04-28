@@ -37,6 +37,7 @@ Based on TCSH.
 - `alias`
 
 ### Separators
+- `;`
 - `|`
 - `>`
 - `>>`
