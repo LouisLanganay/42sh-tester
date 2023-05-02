@@ -419,6 +419,7 @@ execute "\0" "0"
 execute "unsetenv PATH; setenv PATH /bin/ ; ls /" "0"
 execute "./ls" "0"
 execute "sleep 0.1" "0"
+execute "ls /etc ; cat /etc/resolv.conf" "0"
 
 ### TESTS TA ###
 
