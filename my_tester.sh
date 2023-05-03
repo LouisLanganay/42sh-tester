@@ -130,6 +130,8 @@ fi
 
 execute "cd / ; pwd" "0"
 execute "cd toto tata" "0"
+execute "touch random_file ; cd random_file" "0"
+execute "mkdir random_folder ; cd random_folder ; pwd" "0"
 execute "cd fail_dir" "0"
 execute "unsetenv OLDPWD ; cd -" "1"
 
