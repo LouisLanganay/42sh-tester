@@ -8,6 +8,20 @@ TEST_ID=$1
 
 ### CHECK FUNCTION ###
 
+initialize_tests ()
+{
+    printf "\n\033[1;30m----- INITIALIZE TESTS -----\033[0m\n\n"
+    touch random_file
+    mkdir random_folder
+}
+
+clean_tests ()
+{
+    printf "\n\033[1;30m----- CLEAN TESTS -----\033[0m\n\n"
+    rm -rf random_file
+    rm -rf random_folder
+}
+
 compare ()
 {
     if [ "$1" = "$2" ] && [ "$3" = "$4" ]; then
@@ -83,6 +97,8 @@ if [ ! -f 42sh ]; then
     exit 1
 fi
 
+initialize_tests
+
 
 ### BASICS TESTS ###
 
@@ -130,8 +146,8 @@ fi
 
 execute "cd / ; pwd" "0"
 execute "cd toto tata" "0"
-execute "touch random_file ; cd random_file" "0"
-execute "mkdir random_folder ; cd random_folder ; pwd" "0"
+execute "cd random_file" "0"
+execute "cd random_folder ; pwd" "0"
 execute "cd fail_dir" "0"
 execute "unsetenv OLDPWD ; cd -" "1"
 
@@ -442,3 +458,4 @@ then
 fi
 printf "\033[1;36m----- MINISHELL FUNCTIONAL TESTS -----\033[0m\n\n"
 
+clean_tests
