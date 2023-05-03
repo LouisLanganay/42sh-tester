@@ -395,8 +395,8 @@ fi
 
 execute "alias" "0"
 execute "alias popo" "0"
-execute "alias toto ls ; toto" "0"
-execute "alias ls toto ; ls" "0"
+execute "alias bliblablou ls ; bliblablou" "0"
+execute "alias blabla toto ; blabla" "0"
 
 ### BACKTICKS ###
 if [ ! $TEST_ID ]
