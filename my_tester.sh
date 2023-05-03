@@ -228,6 +228,7 @@ execute "./42sh" "0"
 execute "../bin/ls" "0"
 execute "./bin/ls" "0"
 execute "/bin/ls" "0"
+execute "bin/ls" "0"
 execute "./lib" "0"
 
 ### SEMICOLON TESTS ###
