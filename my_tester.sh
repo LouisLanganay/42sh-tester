@@ -122,6 +122,16 @@ execute ".gitignore" "0"
 execute "rjzjrjz ppekn" "0"
 execute "touch /tmp/42sh/test.sh ; /tmp/42sh/test.sh" "1"
 
+### ERROR TESTS ###
+
+if [ ! $TEST_ID ]
+then
+    printf "\n\033[1;33m----- MINISHELL ERROR TESTS -----\033[0m\n\n"
+fi
+
+execute "./tests/div_zero_coredump.out" "0"
+execute "./tests/div_zero_without_coredump.out" "0"
+
 ### SPACES AND TABS TESTS ###
 
 if [ ! $TEST_ID ]
