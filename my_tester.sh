@@ -213,6 +213,8 @@ execute ";" "1"
 execute "ls ; ls ; ls ; ls ; ls ; ls ; ls" "0"
 execute "ls;ls;ls;ls;ls;ls;ls" "0"
 execute "ls;exit 34;ls" "0"
+execute "aa ; ls" "0"
+execute "ls ; aa ; ls" "0"
 
 ### PIPE TESTS ###
 
