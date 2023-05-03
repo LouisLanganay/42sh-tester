@@ -129,8 +129,8 @@ then
     printf "\n\033[1;33m----- MINISHELL ERROR TESTS -----\033[0m\n\n"
 fi
 
-execute "./tests/div_zero_coredump.out" "0"
-execute "./tests/div_zero_without_coredump.out" "0"
+execute "./tests/div_zero_coredump" "0"
+execute "./tests/div_zero_without_coredump" "0"
 
 ### SPACES AND TABS TESTS ###
 
