@@ -129,8 +129,8 @@ then
     printf "\n\033[1;33m----- MINISHELL ERROR TESTS -----\033[0m\n\n"
 fi
 
-execute "./tests/div_zero_coredump" "0"
-execute "./tests/div_zero_without_coredump" "0"
+execute "./tests/my_divzero" "0"
+execute "./tests/my_segfault" "0"
 
 ### SPACES AND TABS TESTS ###
 
@@ -415,6 +415,9 @@ execute "ls && a && ls" "0"
 # "||"
 execute "ls || ls" "0"
 execute "a || a || ls || ls" "0"
+
+execute "ls || a && ls" "0"
+execute "ls && a || ls" "0"
 
 ### Alias ###
 if [ ! $TEST_ID ]
