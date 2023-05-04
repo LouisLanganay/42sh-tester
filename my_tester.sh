@@ -129,8 +129,8 @@ then
     printf "\n\033[1;33m----- MINISHELL ERROR TESTS -----\033[0m\n\n"
 fi
 
-execute "./tests/my_divzero" "0"
-execute "./tests/my_segfault" "0"
+execute "./42sh-tester/tests/my_divzero" "0"
+execute "./42sh-tester/tests/my_segfault" "0"
 
 ### SPACES AND TABS TESTS ###
 
