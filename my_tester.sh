@@ -22,6 +22,17 @@ clean_tests ()
     rm -rf random_folder
 }
 
+reduce_length ()
+{
+    if [ ${#1} -gt 150 ]
+    then
+        printf "\t\033[1;29m%s\n\033[0m" "${1:0:150}"
+        printf "\t\033[1;29m[...] (detail with ./run_tests $2)\n\033[0m"
+    else
+        printf "\t\033[1;29m%s\n\033[0m" "$1"
+    fi
+}
+
 compare ()
 {
     if [ "$1" = "$2" ] && [ "$3" = "$4" ]; then
@@ -49,7 +60,7 @@ compare ()
         printf "\t\033[1;29m./42sh return value %s\n\n\033[0m" "$3"
         printf "\t\033[1;29mTcsh output:\n\033[0m"
         printf "\t\033[1;29m-----------------------\n\033[0m"
-        printf "\t\033[1;29m%s\n\033[0m" "$2"
+        reduce_length "$2" "$TOTAL_TESTS"
         printf "\t\033[1;29m-----------------------\n\033[0m"
         printf "\t\033[1;29mTcsh return value %s \n\n\033[0m" "$4"
     fi
