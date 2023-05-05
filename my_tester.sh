@@ -419,6 +419,13 @@ execute "a || a || ls || ls" "0"
 execute "ls || a && ls" "0"
 execute "ls && a || ls" "0"
 
+execute "&&" "1"
+execute "||" "1"
+execute "ls ||" "1"
+execute "ls &&" "1"
+execute "&& ls" "1"
+execute "|| ls" "1"
+
 ### Alias ###
 if [ ! $TEST_ID ]
 then
