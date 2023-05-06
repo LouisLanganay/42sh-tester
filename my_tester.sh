@@ -55,7 +55,7 @@ compare ()
         printf "%d -\t\033[1;31m[FAIL]\033[0m  \033[4;31m(%s)\n\033[0m" $TOTAL_TESTS "$5"
         printf "\t\033[1;29m./42sh output: \n\033[0m"
         printf "\t\033[1;29m-----------------------\n\033[0m"
-        printf "\t\033[1;29m%s\n\033[0m" "$1"
+        reduce_length "$1" "$TOTAL_TESTS"
         printf "\t\033[1;29m-----------------------\n\033[0m"
         printf "\t\033[1;29m./42sh return value %s\n\n\033[0m" "$3"
         printf "\t\033[1;29mTcsh output:\n\033[0m"
