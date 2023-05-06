@@ -235,7 +235,7 @@ then
     printf "\n\033[1;33m----- MINISHELL WITHOUT PATH TESTS -----\033[0m\n\n"
 fi
 
-execute "unsetenv PATH ; /bin/ls /" "1"
+execute "unsetenv PATH ; ls" "0"
 execute "unsetenv HOME ; cd" "1"
 
 ### PERMISSIONS AND EXECUTION TESTS ###
