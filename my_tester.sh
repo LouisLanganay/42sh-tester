@@ -286,6 +286,8 @@ execute "ls | sort -r | cut -b 1-1 | cat"
 
 #with builtin (cd, exit, setenv, unsetenv, exit)
 execute "ls | cd ; ls" "0"
+execute "setenv | cat -e" "0"
+
 
 ### REDIRECTION TESTS ###
 
