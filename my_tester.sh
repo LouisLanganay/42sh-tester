@@ -285,8 +285,11 @@ execute "ls | | cat -e" "1"
 execute "ls | sort -r | cut -b 1-1 | cat"
 
 #with builtin (cd, exit, setenv, unsetenv, exit)
-execute "ls | cd ; ls" "0"
-execute "setenv | cat -e" "0"
+execute "setenv | grep PWD | cat -e" "0"
+execute "cd /var/log | ls -la" "0"
+execute "env | grep TERM" "0"
+execute "unsetenv LANG | echo \"Hello, world!\"" "0"
+execute "cd /usr/share | grep \"doc\" | wc -l | cat -e" "0"
 
 
 ### REDIRECTION TESTS ###
