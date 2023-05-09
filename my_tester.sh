@@ -471,6 +471,9 @@ fi
 
 execute "ls \`ls\`" "0"
 execute "echo \`echo hello\`" "0"
+execute "echo \`date\`" "0"
+execute "echo \`echo hello \$(echo world)\`"
+execute "echo \`echo '\$(date)'\`"
 
 ### OTHER TESTS ###
 
