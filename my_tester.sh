@@ -472,7 +472,7 @@ fi
 execute "ls \`ls\`" "0"
 execute "echo \`echo hello\`" "0"
 execute "echo \`date\`" "0"
-execute "echo \`echo hello \$(echo world)\`"
+execute "echo \`echo hello \`echo world\`\`"
 execute "echo \`echo \"hello world\"\`"
 execute "echo \`echo 'hello world'\`"
 
@@ -482,7 +482,7 @@ then
     printf "\n\033[1;33m----- MINISHELL INHIBITOR TESTS -----\033[0m\n\n"
 fi
 
-execute "echo \"Hello, \\"World\\"!\"" "0"
+execute "echo \"Hello, \\\"World\\\"!\"" "0"
 execute "echo \"Hello,\\ World!\"" "0"
 
 ### OTHER TESTS ###
