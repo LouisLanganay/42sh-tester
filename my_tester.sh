@@ -488,8 +488,7 @@ then
     printf "\n\033[1;33m----- MINISHELL INHIBITOR TESTS -----\033[0m\n\n"
 fi
 
-execute "echo \"Hello, \\\"World\\\"!\"" "0"
-execute "echo \"Hello,\\ World!\"" "0"
+execute "ls\ t" "0"
 
 ### OTHER TESTS ###
 
