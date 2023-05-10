@@ -389,6 +389,8 @@ execute "set test = toto"
 execute "set test=build/ ; ls \$test" "0"
 execute "set test=build/" "0"
 execute "set test = build tata ; ls \$test" "0"
+execute "set bb aa cc dd ee ; set" "0"
+execute "set bb=1 aa=2 cc=3 dd=4 ; set" "0"
 
 ### HISTORY ###
 if [ ! $TEST_ID ]
@@ -452,7 +454,7 @@ execute "ls &&" "1"
 execute "&& ls" "1"
 execute "|| ls" "1"
 
-### Alias ###
+### ALIAS ###
 if [ ! $TEST_ID ]
 then
     printf "\n\033[1;33m----- MINISHELL ALIAS TESTS -----\033[0m\n\n"
@@ -462,6 +464,9 @@ execute "alias" "0"
 execute "alias popo" "0"
 execute "alias bliblablou ls ; bliblablou" "0"
 execute "alias blabla toto ; blabla" "0"
+execute "alias bloblo ls ; bloblo ; alias" "0"
+execute "alias aa ls -l includes ; aa" "0"
+execute "alias bb ls -l random_dir ; bb" "0"
 
 ### BACKTICKS ###
 if [ ! $TEST_ID ]
