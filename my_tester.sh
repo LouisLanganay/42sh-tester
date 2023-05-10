@@ -504,6 +504,7 @@ execute "ls /etc ; cat /etc/resolv.conf" "0"
 ### TESTS TA ###
 
 execute "cat -e 42sh-tester/tests/bigfile.json | grep o" "0"
+execute "setenv PATH / ; bin/ls" "0"
 
 
 ### RESULT TESTS ###
