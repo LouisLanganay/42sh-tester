@@ -389,8 +389,8 @@ execute "set test = toto"
 execute "set test=build/ ; ls \$test" "0"
 execute "set test=build/" "0"
 execute "set test = build tata ; ls \$test" "0"
-execute "set bb aa cc dd ee ; set" "0"
-execute "set bb=1 aa=2 cc=3 dd=4 ; set" "0"
+execute "set bb aa cc dd ee ; echo \$bb ; echo \$aa ; echo \$cc" "0"
+execute "set bb=1 aa=2 cc=3 dd=4 ; echo \$bb ; echo \$aa ; echo \$cc" "0"
 
 ### HISTORY ###
 if [ ! $TEST_ID ]
