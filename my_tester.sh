@@ -335,6 +335,7 @@ execute "ls -l > /tmp/42sh/lala ; cat /tmp/42sh/lala | grep lib | cat -e" "0"
 
 # Double
 execute "ls -l > /tmp/42sh/dada ; ls >> /tmp/42sh/dada ; cat /tmp/42sh/dada | grep lib ; rm /tmp/42sh/dada" "0"
+execute "ls -l > /tmp/42sh/kaka ; ls >> /tmp/42sh/kaka ; ls -l >> /tmp/42sh/kaka ; cat /tmp/42sh/kaka" "0"
 
 ## INPUT
 # Simple
