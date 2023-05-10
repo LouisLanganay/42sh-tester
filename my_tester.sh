@@ -489,6 +489,8 @@ then
 fi
 
 execute "ls\ t" "0"
+execute "ls valentin\ peron" "0"
+execute "ls valentin\peron" "0"
 
 ### OTHER TESTS ###
 
