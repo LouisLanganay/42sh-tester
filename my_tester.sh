@@ -314,8 +314,8 @@ execute "cat > /tmp/42sh/yuyu > /tmp/42sh/tata < /tmp/42sh/yuyu ; cat < /tmp/42s
 execute "ls -l > /tmp/42sh/toto ; cat /tmp/42sh/toto" "0"
 
 # Double
-execute "ls -l > /tmp/42sh/titi ; ls >> /tmp/42sh/titi ; cat /tmp/42sh/titi ; rm /tmp/42sh/titi" "0"
-execute "ls -l >> /tmp/42sh/kuku ; cat /tmp/42sh/kuku ; rm /tmp/42sh/kuku" "0"
+execute "ls -l > /tmp/42sh/titi ; ls >> /tmp/42sh/titi ; cat /tmp/42sh/titi ; rm -rf /tmp/42sh/titi" "0"
+execute "ls -l >> /tmp/42sh/kuku ; cat /tmp/42sh/kuku ; rm -rf /tmp/42sh/kuku" "0"
 
 ## INPUT
 # Simple
@@ -334,7 +334,7 @@ execute "ls -l > /tmp/42sh/papa ; cat /tmp/42sh/papa | grep lib" "0"
 execute "ls -l > /tmp/42sh/lala ; cat /tmp/42sh/lala | grep lib | cat -e" "0"
 
 # Double
-execute "ls -l > /tmp/42sh/dada ; ls >> /tmp/42sh/dada ; cat /tmp/42sh/dada | grep lib ; rm /tmp/42sh/dada" "0"
+execute "ls -l > /tmp/42sh/dada ; ls >> /tmp/42sh/dada ; cat /tmp/42sh/dada | grep lib ; rm -rf /tmp/42sh/dada" "0"
 execute "ls -l > /tmp/42sh/kaka ; ls >> /tmp/42sh/kaka ; ls -l >> /tmp/42sh/kaka ; cat /tmp/42sh/kaka" "0"
 
 ## INPUT
