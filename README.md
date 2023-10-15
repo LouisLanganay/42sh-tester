@@ -11,8 +11,8 @@ Based on TCSH.
 - You must `make` your project.
 - Your binary must have the name "42sh".
 
-| ⚠️ | Use [epitests-docker](https://hub.docker.com/r/epitechcontent/epitest-docker) for a better fialibity of the tester |
-|--- | ---|
+> [!WARNING]
+> Use [epitests-docker](https://hub.docker.com/r/epitechcontent/epitest-docker) for a better fialibity of the tester
 
 ## Usage
 1. Clone this repo in your 42sh repository `git clone git@github.com:LouisLanganay/42sh-tester.git`
