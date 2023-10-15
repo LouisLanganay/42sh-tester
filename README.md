@@ -53,8 +53,9 @@ Based on TCSH.
 
 ### Backticks
 - `\``
-
-> **Note** All return values are tested for each tests
+  
+> [!NOTE]
+> All return values are tested for each tests
 
 ## Example
 ![image](https://user-images.githubusercontent.com/114762819/228669523-c267f9db-482f-4a7e-bbda-314240a4a23b.png)
