@@ -24,7 +24,8 @@ Based on TCSH.
 2. Put it in the root of your project.
 3. Run it with `./run_tests.sh`.
 
-> **Note** You can get informations about a specific test using `./run_tests.sh TEST_NBR`
+> [!NOTE]
+> You can get informations about a specific test using `./run_tests.sh TEST_NBR`
 
 ## Features tested
 ### Commands builtin
