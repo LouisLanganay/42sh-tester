@@ -62,6 +62,8 @@ Based on TCSH.
 ![image](https://user-images.githubusercontent.com/114762819/228669619-93e74d4d-d492-4add-9a64-5656182e360f.png)
 ![image](https://user-images.githubusercontent.com/114762819/228669668-ac1f446c-84f2-416b-bf55-4f44614fe42d.png)
 
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=LouisLanganay&repo=Pushswap_checker-tester&theme=dark&border_radius=8&hide_border=true)](https://github.com/LouisLanganay/Pushswap_checker-tester)
+
 ## Credits
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=M4gie&repo=epi-minishell2-tester&theme=dark&border_radius=8&hide_border=true)](https://github.com/M4gie/epi-minishell2-tester)
 
