@@ -1,6 +1,7 @@
 <p align="center">
     <img src="https://img.shields.io/badge/Test%20Count-150+-blue"/>
     <img src="https://img.shields.io/github/stars/LouisLanganay/42sh-tester.svg?style=social&label=Star&maxAge=2592000"/>
+    <img src="https://img.shields.io/github/downloads/LouisLanganay/42sh-tester/total.svg"/>
 </p>
 
 # 42sh tester
